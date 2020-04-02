@@ -8,7 +8,7 @@ services:
                 aliases: 
                     - psql_server
         volumes: 
-            - psql_data:/run/lib/posgresql/data
+            - psql_data:/var/lib/postgresql/data
         secrets:
             - psql_password
             - psql_user
@@ -26,6 +26,7 @@ services:
             - drupal_modules:/var/www/html/modules
             - drupal_profiles:/var/www/html/profiles
             - drupal_themes:/var/www/html/themes
+            - drupal_site:/var/www/html/sites
 
 networks: 
     backend:
@@ -45,3 +46,4 @@ volumes:
     drupal_modules:
     drupal_profiles:
     drupal_themes:
+    drupal_site:
