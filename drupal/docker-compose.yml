@@ -1,0 +1,47 @@
+version: "3.1"
+
+services: 
+    psql:
+        image: postgres
+        networks: 
+            backend:
+                aliases: 
+                    - psql_server
+        volumes: 
+            - psql_data:/run/lib/posgresql/data
+        secrets:
+            - psql_password
+            - psql_user
+        environment: 
+            POSTGRES_PASSWORD_FILE: /run/secrets/psql_password
+            POSTGRES_USER_FILE: /run/secrets/psql_user
+    drupal:
+        image: drupal
+        networks: 
+            backend:
+            frontend:
+        ports: 
+            - "80:80"
+        volumes: 
+            - drupal_modules:/var/www/html/modules
+            - drupal_profiles:/var/www/html/profiles
+            - drupal_themes:/var/www/html/themes
+
+networks: 
+    backend:
+        driver: overlay
+        internal: true
+    frontend:
+        driver: overlay
+
+secrets:
+    psql_user: 
+        file: ./psql_user.txt
+    psql_password:
+        file: ./psql_password.txt
+
+volumes: 
+    psql_data:
+    drupal_modules:
+    drupal_profiles:
+    drupal_themes:
