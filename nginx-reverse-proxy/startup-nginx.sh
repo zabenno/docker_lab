@@ -5,4 +5,8 @@ sed -i 's/SERVER_PORT/'"$SERVER_PORT"'/g' /etc/nginx/sites-available/reverse-pro
 sed -i 's/CRT_FILE/'"$CRT_FILE_PATH"'/g' /etc/nginx/sites-available/reverse-proxy.conf
 sed -i 's/KEY_FILE/'"$KEY_FILE_PATH"'/g' /etc/nginx/sites-available/reverse-proxy.conf
 
+echo "------------------------------------------------\nUsing nginx configuration:\n"
+cat /etc/nginx/sites-available/reverse-proxy.conf
+echo "------------------------------------------------\n"
+
 nginx
