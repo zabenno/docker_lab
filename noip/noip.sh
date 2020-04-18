@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Check for username docker swarm secret.
-if [ -z "$USERNAME_FILE"]
+if [ -z "$2"]
 then
 	username=$(cat $2)
 else
@@ -9,7 +9,7 @@ else
 fi
 
 #Check for password docker swarm secret.
-if [ -z "$PASSWORD_FILE"]
+if [ -z "$3"]
 then
 	password=$(cat $3)
 else
