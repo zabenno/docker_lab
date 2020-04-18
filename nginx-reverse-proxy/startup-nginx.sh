@@ -9,4 +9,4 @@ echo "------------------------------------------------\nUsing nginx configuratio
 cat /etc/nginx/sites-available/reverse-proxy.conf
 echo "------------------------------------------------\n"
 
-nginx
+nginx -g daemon off
