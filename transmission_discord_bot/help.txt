@@ -1,0 +1,16 @@
+```markdown
+# Overview
+This bot is currently in alpha so feature changes and bugs should be expected.
+This is where you can find information about all commands offered by this bot.
+
+# Commands
+1. help - Displays this help file.
+2. torrent add {URL} - Starts the download of a torent from its URL or magnet.
+3. torrent list - Displays the state of all torrents.
+4. torrent pause {ID} - Pause the download of torrent with {ID}.
+5. torrent purge {ID} - Remove from torrent client and delete all downloaded files for torrent with {ID}.
+6. torrent remove {ID} - Removes torrent with {ID} from the torrent client, this does not remove the downloaded file.
+7. torrent resume {ID} - Resumes download for torrent with {ID}.
+# Contact
+Contact zabenno for any bugs or feature requests. The code for this project can be found at https://github.com/zabenno/python_discord_bot_test
+```
